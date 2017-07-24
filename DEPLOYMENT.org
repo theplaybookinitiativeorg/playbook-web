@@ -1,0 +1,19 @@
+#+TITLE: DEPLOYMENT
+#+AUTHOR: Sounak Pradhan
+
+* Deployment in localhost
+** Clone the repository
+#+BEGIN_EXAMPLE
+git clone https://github.com/theplaybookinitiativeorg/playbook-web
+#+END_EXAMPLE
+
+** Source the Virtual Environment
+#+BEGIN_EXAMPLE
+source ~/.virtualenvs/playbook/bin/activate
+#+END_EXAMPLE
+
+** Goto the app directory and run the host the app in localhost
+#+BEGIN_EXAMPLE
+cd playbook-web/playbook
+python manage.py runserver
+#+END_EXAMPLE
