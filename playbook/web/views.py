@@ -7,17 +7,17 @@ from django.urls import reverse
 class HomePageView(TemplateView):
     template_name = 'index.html'
 
-class AboutPageView(TemplateView):
-    template_name = 'about.html'
+# class AboutPageView(TemplateView):
+#     template_name = 'about.html'
 
-class ListPlayView(ListView):
-    model = Play
-    template_name = 'play_list.html'
+# class ListPlayView(ListView):
+#     model = Play
+#     template_name = 'play_list.html'
 
-class CreatePlayView(CreateView):
-    model = Play
-    fields = ['name', 'director', 'actors', 'group', 'plot', 'rating', 'youtube_link']
-    template_name = 'edit_list.html'
+# class CreatePlayView(CreateView):
+#     model = Play
+#     fields = ['name', 'director', 'actors', 'group', 'plot', 'rating', 'youtube_link']
+#     template_name = 'edit_list.html'
     
-    def get_success_url(self):
-        return reverse('play-list')
+#     def get_success_url(self):
+#         return reverse('play-list')

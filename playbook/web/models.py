@@ -7,10 +7,11 @@ class Play(models.Model):
     group = models.CharField(max_length=255)
     plot = models.TextField()
     rating = models.IntegerField()
-    youtube_link = models.CharField(max_length=1023)
+    youtube = models.CharField(max_length=1023)
+    genres = models.ManyToManyField('Genre')
 
     def __str__(self):
-        return ' '.join([self.name, self.group])
+        return self.name
 
 class Comment(models.Model):
     name = models.CharField(max_length=255)
@@ -20,4 +21,10 @@ class Comment(models.Model):
     play = models.ForeignKey('Play', on_delete=models.CASCADE)
 
     def __str__(self):
-        return ' '.join([self.name, self.timestamp])
+        return self.name
+
+class Genre(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
