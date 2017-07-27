@@ -3,23 +3,71 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
         <script src="{% static "js/jquery-3.2.1.min.js" %}" crossorigin="anonymous"></script>
         <script src="{% static "js/tether.min.js" %}" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="{% static "js/bootstrap.min.js" %}" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-        <meta charset="utf-8">
         <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico" %}"/>
+        <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}"/>
         <title>PlayBook!</title>
+        <style>
+            @font-face {
+                font-family: junction;
+                src: url("{% static "fonts/junction.regular.otf" %}");
+            }
+
+            @font-face {
+                font-family: junction;
+                src: url("{% static "fonts/junction.bold.otf" %}");
+                font-weight: bold;
+            }
+
+            .junction {
+                font-family: junction;
+            }
+
+            .bold {
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <!-- <img src="{% static "img/logo.jpg" %}" width="30" height="30" alt=""> -->
-                PlayBook
-            </a>
-        </nav>
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-full">
+            <div class="container"> 
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand bold junction" href="#">
+                    <!-- Put the logo here -->
+                    PlayBook
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="form-inline mr-auto my-2 my-lg-0">
+                        <input class="form-control mr-sm-2 junction" type="text" placeholder="search plays here..."/>
+                        <button class="btn btn-outline-info my-2 my-sm-0" id="search">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <ul class="navbar-nav mt-2 mt-lg-0 junction">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Plays</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Interviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </nav> 
     </body>
 </html>
