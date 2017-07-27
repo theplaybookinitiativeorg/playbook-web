@@ -30,10 +30,34 @@
             .bold {
                 font-weight: bold;
             }
+
+            nav.shrink {
+                background-color: rgba(0,0,0,0.5);
+            }
+
+            .full-width {
+                width: 100%;
+            }
+
+            .footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+            }
+
+            .red {
+                color: red;
+            }
+
+            .pre-footer {
+                margin-bottom: 60px;
+            }
         </style>
     </head>
-    <body>
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-full">
+    <body class="">
+        <nav class="navbar navbar-toggleable-md navbar-full bg-primary navbar-inverse fixed-top">
             <div class="container"> 
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
@@ -44,7 +68,7 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form class="form-inline mr-auto my-2 my-lg-0">
-                        <input class="form-control mr-sm-2 junction" type="text" placeholder="search plays here..."/>
+                        <input class="form-control mr-sm-2" type="text" id="search-navbar" placeholder="Plays, groups or artists"/>
                         <button class="btn btn-outline-info my-2 my-sm-0" id="search">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
@@ -67,7 +91,86 @@
                         </li>
                     </ul>
                 </div>
-            </div> 
-        </nav> 
+            </div>
+        </nav>
+        
+        <div class="mb-4">
+            <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block full-width img-fluid" src="{% static "img/sample.svg" %}" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="junction">Heading</h3>
+                            <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aliquam beatae suscipit dolores officia fugiat. Eligendi incidunt, odit a maxime, quibusdam voluptas ad cumque magni quam beatae, aliquam ullam. Eos.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block full-width img-fluid" src="{% static "img/sample.svg" %}" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="junction">Heading</h3>
+                            <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, esse quam enim. Praesentium eius porro excepturi! Error itaque sit excepturi ab reiciendis tenetur accusamus veritatis in, suscipit iure alias fuga.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block full-width img-fluid" src="{% static "img/sample.svg" %}" alt="Third slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="junction">Heading</h3>
+                            <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe cupiditate id sit ipsam laudantium odit, tempore voluptas perspiciatis culpa amet possimus consequatur aspernatur blanditiis! Et unde alias hic at asperiores!</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="container pre-footer">
+            <h1 class="junction">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non cumque voluptatum, cupiditate minus est perferendis nesciunt. Unde a veniam magni? Incidunt esse nulla quaerat provident placeat ad mollitia, non qui.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, sint nisi. Repellat fuga sint numquam quia vero dolores nemo molestiae quae, consequuntur ullam, deserunt quisquam cupiditate quas accusamus aliquid sequi!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt labore possimus at est rerum ullam debitis ipsam deserunt a, expedita corporis repellendus vel, iusto nobis illum veniam doloribus. Earum, amet?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi qui ducimus esse, quo ut aspernatur repellat voluptates iusto, obcaecati suscipit sit. Voluptatum officia fugiat nam rerum voluptatibus, quo provident eius?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam nisi praesentium porro optio quasi impedit, asperiores sunt quaerat reiciendis id numquam repellendus, doloremque aut provident vel fuga tempora, suscipit alias!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque voluptatum eius atque blanditiis officia recusandae impedit quod veniam, nam maiores aperiam nostrum sunt hic, ipsa culpa expedita error temporibus vel.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ea fugiat maiores. Blanditiis voluptatem inventore molestiae quo, ad, laudantium soluta provident alias labore atque, earum, quisquam impedit doloremque libero laborum!
+            </h1>
+        </div>
+
+        <footer class="footer bg-warning">
+            <div class="container text-center">
+                <!-- <span class="text-muted">Made with <i class="fa fa-heart red" aria-hidden="true"></i></span> -->
+                <span class="text-muted"><i class="fa fa-copyright" aria-hidden="true"></i> The PlayBook Initiative</span>
+            </div>
+        </footer>
+
+        <script>
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 1) {
+                    $('nav').addClass('shrink');
+                    $('nav').removeClass('bg-primary');
+                }
+                else {
+                    $('nav').removeClass('shrink');
+                    $('nav').addClass('bg-primary');
+                }
+            });
+
+            $('#search-navbar').focus(function() {
+                $(this).animate({ width: '+=100' }, 'slow');
+            }).blur(function() {
+                $(this).animate({ width: '-=100' }, 'slow');
+            });
+        </script>
     </body>
 </html>
