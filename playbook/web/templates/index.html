@@ -63,8 +63,20 @@
                 background-color: #f6f6f6;
             }
 
-            .tiles {
-                padding: 100px !important;
+            .tile-text-left {
+                padding: 100px 10px 100px 100px !important;
+            }
+
+            .tile-text-right {
+                padding: 100px 100px 100px 10px !important;
+            }
+
+            .tile-img-left {
+                padding: 100px 10px 100px 100px !important;
+            }
+
+            .tile-img-right {
+                padding: 100px 100px 100px 10px !important;
             }
 
             .hidden{
@@ -123,21 +135,24 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block carousel-img img-fluid" src="{% static "img/3.jpg" %}" alt="First slide">
+                        <!-- <img class="d-block carousel-img img-fluid" src="{% static "img/3.jpg" %}" alt="First slide"> -->
+                        <img src="http://lorempixel.com/1400/500" class="d-block carousel-img img-fluid">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 class="junction">Heading</h3>
                             <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aliquam beatae suscipit dolores officia fugiat. Eligendi incidunt, odit a maxime, quibusdam voluptas ad cumque magni quam beatae, aliquam ullam. Eos.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block carousel-img img-fluid" src="{% static "img/1.jpg" %}" alt="Second slide">
+                        <!-- <img class="d-block carousel-img img-fluid" src="{% static "img/1.jpg" %}" alt="Second slide"> -->
+                        <img src="http://lorempixel.com/1400/500" class="d-block carousel-img img-fluid">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 class="junction">Heading</h3>
                             <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, esse quam enim. Praesentium eius porro excepturi! Error itaque sit excepturi ab reiciendis tenetur accusamus veritatis in, suscipit iure alias fuga.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block carousel-img img-fluid" src="{% static "img/2.jpg" %}" alt="Third slide">
+                        <!-- <img class="d-block carousel-img img-fluid" src="{% static "img/2.jpg" %}" alt="Third slide"> -->
+                        <img src="http://lorempixel.com/1400/500" class="d-block carousel-img img-fluid">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 class="junction">Heading</h3>
                             <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe cupiditate id sit ipsam laudantium odit, tempore voluptas perspiciatis culpa amet possimus consequatur aspernatur blanditiis! Et unde alias hic at asperiores!</p>
@@ -157,8 +172,13 @@
 
         <div class="container-fluid mb-4">
             <div class="row">
-                <div class="offset-md-4 col-md-8">
-                    <div class="container tiles">
+                <div class="col-md-4">
+                    <div class="container tile-img-left">
+                        <img src="http://lorempixel.com/400/300" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container tile-text-right">
                         <h1 class="junction">
                             Plays
                         </h1>
@@ -172,7 +192,7 @@
         <div class="container-fluid bg-gray mb-4">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="container tiles">
+                    <div class="container tile-text-left text-right">
                         <h1 class="junction">
                             Interviews
                         </h1>
@@ -180,13 +200,23 @@
                         <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nihil repellendus, excepturi maiores non aperiam, natus laboriosam facilis modi illo libero, nemo fuga. Distinctio fugit esse, eligendi fugiat ea, inventore.</p>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="container tile-img-right">
+                        <img src="http://lorempixel.com/400/300" class="img-fluid">
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="container-fluid mb-4">
             <div class="row">
-                <div class="offset-md-4 col-md-8">
-                    <div class="container tiles">
+                <div class="col-md-4">
+                    <div class="container tile-img-left">
+                        <img src="http://lorempixel.com/400/300" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container tile-text-right">
                         <h1 class="junction">
                             Events
                         </h1>
@@ -200,12 +230,17 @@
         <div class="container-fluid bg-gray mb-4">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="container tiles">
+                    <div class="container tile-text-left text-right">
                         <h1 class="junction">
                             About Us
                         </h1>
                         <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nihil repellendus, excepturi maiores non aperiam, natus laboriosam facilis modi illo libero, nemo fuga. Distinctio fugit esse, eligendi fugiat ea, inventore.</p>
                         <p class="junction">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nihil repellendus, excepturi maiores non aperiam, natus laboriosam facilis modi illo libero, nemo fuga. Distinctio fugit esse, eligendi fugiat ea, inventore.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="container tile-img-right">
+                        <img src="http://lorempixel.com/400/300" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -232,8 +267,12 @@
             });
 
             $(document).ready(function() {
-                $('.tiles').addClass("hidden").viewportChecker({
+                $('.tile-img-left, .tile-text-left').addClass("hidden").viewportChecker({
                     classToAdd: 'visible animated fadeInLeft',
+                    offset: 100
+                });
+                $('.tile-img-right, .tile-text-right').addClass("hidden").viewportChecker({
+                    classToAdd: 'visible animated fadeInRight',
                     offset: 100
                 });
             });
