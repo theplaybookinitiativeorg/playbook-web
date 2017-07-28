@@ -8,6 +8,8 @@
         <script src="{% static "js/jquery-3.2.1.min.js" %}" crossorigin="anonymous"></script>
         <script src="{% static "js/tether.min.js" %}" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="{% static "js/bootstrap.min.js" %}" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="{% static "js/jquery.viewportchecker.min.js" %}"></script>
+        <link rel="stylesheet" href="{% static "css/animate.css" %}"/>
         <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico" %}"/>
         <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}"/>
         <title>PlayBook!</title>
@@ -30,10 +32,6 @@
             .bold {
                 font-weight: bold;
             }
-
-            /* nav.transparent {
-                background-color: rgba(0,0,0,0.5);
-            } */
 
             .carousel-img {
                 width: 100%;
@@ -67,6 +65,14 @@
 
             .tiles {
                 padding: 100px !important;
+            }
+
+            .hidden{
+                opacity:0;
+            }
+                
+            .visible{
+                opacity:1;
             }
         </style>
     </head>
@@ -207,23 +213,11 @@
 
         <footer class="footer bg-warning">
             <div class="container text-center">
-                <!-- <span class="text-muted">Made with <i class="fa fa-heart red" aria-hidden="true"></i></span> -->
-                <span class="text-muted"><i class="fa fa-copyright" aria-hidden="true"></i> The PlayBook Initiative</span>
+                <span class="text-muted"><i class="fa fa-copyright" aria-hidden="true"></i> The PlayBook Initiative</span> 
             </div>
         </footer>
 
         <script>
-            /* $(window).scroll(function() {
-                if ($(document).scrollTop() > 1) {
-                    $('nav').addClass('transparent');
-                    $('nav').removeClass('bg-primary');
-                }
-                else {
-                    $('nav').removeClass('transparent');
-                    $('nav').addClass('bg-primary');
-                }
-            }); */
-
             $('#search-navbar').focus(function() {
                 $(this).animate({ width: '+=100' }, 'fast');
             }).blur(function() {
@@ -234,6 +228,13 @@
                 $(document).scroll(function () {
                     var $nav = $(".fixed-top");
                     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                });
+            });
+
+            $(document).ready(function() {
+                $('.tiles').addClass("hidden").viewportChecker({
+                    classToAdd: 'visible animated fadeInLeft',
+                    offset: 100
                 });
             });
         </script>
